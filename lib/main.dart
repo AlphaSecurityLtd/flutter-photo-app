@@ -69,8 +69,9 @@ class _CameraScreenState extends State<CameraScreen> {
       String overlayText =
           'Local: $localTime\nNetwork: $networkTime\nLocation: ${position.latitude}, ${position.longitude}';
 
-      img.drawString(capturedImage, img.arial_24, 10, 10, overlayText,
-          color: img.getColor(255, 255, 255));
+      img.drawString(capturedImage, overlayText,
+    font: img.arial24, x: 10, y: 10, color: img.ColorRgb8(255, 255, 255));
+
 
       File(imagePath).writeAsBytesSync(img.encodeJpg(capturedImage));
 
